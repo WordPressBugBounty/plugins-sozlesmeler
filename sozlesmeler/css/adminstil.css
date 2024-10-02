@@ -1,0 +1,33 @@
+.wctr_banner{
+	position: relative;
+	border: 2px dashed #c8c8c8;
+	padding: 10px;
+}
+.wctr_banner ul{
+	text-align:left;
+	list-style:disc inside;
+}
+.wctr_banner_title{
+	font-weight:bold;
+	font-size:large;
+	color:red;
+}
+.wctr_banner_watermark{
+	position:absolute;
+	right:5px;
+	top:50%;
+	opacity: 0.1;
+	transform: rotate(330deg);
+	-webkit-transform: rotate(330deg);
+	-moz-transform: rotate(330deg);
+	font-size:50px;
+	color:#000000;
+	font-family: fantasy;
+	font-weight: bold;       
+	user-select: none; /* Non-prefixed version for chorme, opera and*/
+	-ms-user-select: none; /* Internet Explorer, Edge */
+	-moz-user-select: none; /* Firefox */
+	-khtml-user-select: none; /* Konqueror HTML */
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Safari */
+}
