@@ -2,9 +2,9 @@
 Contributors: emreguler
 Tags: sozlesmeler, woocommerce, sozlesme, contract
 Requires at least: 5.0
-Tested up to: 6.6
+Tested up to: 6.8
 Requires PHP: 7.4
-Stable tag: 2.5.0
+Stable tag: 2.6.0
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -30,6 +30,10 @@ Sorularınız için: iletisim@eguler.net
 == Screenshots ==
 
 == Changelog ==
+= 2.6.0 =
+* Performans ve güvenlik iyileştirmeleri yapıldı
+* Ayarlar sayfasında değişiklikler yapıldı
+
 = 2.5.0 =
 * Yükseltme bağlantısı güncellendi
 
@@ -78,10 +82,10 @@ Sorularınız için: iletisim@eguler.net
 
 = 1.8 =
 * Uyumluluk güncellemeleri
-* Kampanya  
+* Kampanya
 
 = 1.7 =
-* TCKN alanına girilen verinin kontrolünde iyileştirilmeler yapıldı. 
+* TCKN alanına girilen verinin kontrolünde iyileştirilmeler yapıldı.
 Teşekkürler: Yiğit Budak
 
 = 1.6 =
@@ -113,7 +117,7 @@ Teşekkürler: Yiğit Budak
 * TCKN zorunluluğu kaldırıldı.
 
 = 1.7 =
-* TCKN alanına girilen verinin kontrolünde iyileştirilmeler yapıldı. 
+* TCKN alanına girilen verinin kontrolünde iyileştirilmeler yapıldı.
 Teşekkürler: Yiğit Budak
 
 = 1.6 =

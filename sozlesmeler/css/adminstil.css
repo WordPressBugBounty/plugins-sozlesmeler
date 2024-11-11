@@ -23,11 +23,45 @@
 	font-size:50px;
 	color:#000000;
 	font-family: fantasy;
-	font-weight: bold;       
+	font-weight: bold;
 	user-select: none; /* Non-prefixed version for chorme, opera and*/
 	-ms-user-select: none; /* Internet Explorer, Edge */
 	-moz-user-select: none; /* Firefox */
 	-khtml-user-select: none; /* Konqueror HTML */
 	-webkit-touch-callout: none; /* iOS Safari */
 	-webkit-user-select: none; /* Safari */
+}
+.pro{
+	display: flex;
+}
+.pro:before {
+	margin-right: 10px;
+	width: 35px;
+	height: 16px;
+	content: "";
+	background-image: url("../pro-badge-small.svg");
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+.prolink{
+	color: green;
+	display: flex;
+	background: none !important;
+	border: none !important;
+	float: right;
+}
+.prolink:hover{
+	color: red;
+}
+.prolink::before {
+	margin-right: 5px;
+	width: 24px;
+	height: 24px;
+	content: "";
+	background-image: url("../star.svg");
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+.prolink::after {
+	float: none;
 }
