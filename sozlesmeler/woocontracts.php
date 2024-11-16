@@ -11,7 +11,7 @@
  * Plugin Name:       Sözleşmeler
  * Plugin URI:        https://eguler.net/woocommerce-sozlesmeler-eklentisi/
  * Description:       Woocommerce sitenize mesafeli satış sözleşmesi ve ön bilgilendirme formu gibi yasal metinleri ekleyebileceğiniz sözleşmeler eklentisi
- * Version:           2.6.0
+ * Version:           2.6.1
  * Requires at least: 5.0
  * Requires PHP:      7.4
  * Requires Plugins:	woocommerce
@@ -23,7 +23,7 @@
  * License URI:       http://www.gnu.org/licenses/gpl-3.0.html
  *
  *
- * WC tested up to: 9.3.3
+ * WC tested up to: 9.4.1
  *
  */
 
@@ -33,7 +33,7 @@ if (!defined('ABSPATH')) {
 
 define('WCTR_PATH', plugin_dir_path(__FILE__));
 define('WCTR_URL', plugin_dir_url(__FILE__));
-define('WCTR_VER', '2.6.0');
+define('WCTR_VER', '2.6.1');
 
 function woocontracts_activated()
 {
@@ -674,6 +674,11 @@ if ($is_wc_active) {
 								<tr valign="top">
 									<th scope="row"><label class="pro" for="woocCheck">Onay Kutusu</label></th>
 									<td><label for="woocCheck"><input type="checkbox" id="woocCheck" name="woocCheck" value="" checked disabled>&nbsp;Onay kutusunu aktifleştir</label></td>
+								</tr>
+								</tr>
+								<tr valign="top">
+									<th scope="row"><label class="pro" for="woocAttachment">E-posta Eki</label></th>
+									<td><label for="woocAttachment"><input type="checkbox" id="woocAttachment" name="woocAttachment" value="" disabled>&nbsp; Sözleşmeleri e-postalara dosya eki (.pdf attachment) olarak ekle</label></td>
 								</tr>
 								<tr valign="top">
 									<th scope="row"><label class="pro" for="wctrMails_no">Epostalar</label></th>
