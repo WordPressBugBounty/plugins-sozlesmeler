@@ -4,176 +4,240 @@ Tags: sozlesmeler, woocommerce, sozlesme, contract
 Requires at least: 5.0
 Tested up to: 6.8
 Requires PHP: 7.4
-Stable tag: 2.6.1
+Stable tag: 2.7.0
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
-Woocommerce sitenize mesafeli satış sözleşmesi gibi yasal metinleri ekleyebileceğiniz sözleşmeler eklentisi
+WordPress plugin to add legal documents like distance sales agreement to your WooCommerce store.
 
 == Description ==
 
-# Sözleşmeler Eklentisi: E-Ticaretiniz İçin Hukuki Uyumluluğu Kolaylaştırın!
+Sözleşmeler Plugin: Simplify Legal Compliance for Your Online Store!
 
-E-ticaret dünyasında yasal gereklilikleri karşılamak her işletme sahibi için önemli bir sorumluluktur. Özellikle Türkiye’de **"Mesafeli Satış Sözleşmesi"** ve **"Ön Bilgilendirme Formu"** gibi yasal metinlerin sunulması zorunludur. İşte tam da bu noktada, **Sözleşmeler Eklentisi** işinizi kolaylaştırmak için tasarlandı!
+In the e-commerce world, meeting legal requirements is an essential responsibility for every business owner. Specifically, legal documents such as **"Distance Sales Agreement"** and **"Pre-Information Form"** are mandatory in certain countries like Turkey. This is where the **Sözleşmeler Plugin** comes into play!
 
-## Sözleşmeler Eklentisi Nedir?
+## What is the Sözleşmeler Plugin?
 
-Bu eklenti, WooCommerce altyapısını kullanan e-ticaret sitelerine yasal sözleşme ve bilgilendirme metinlerini kolayca ekleme imkanı sunar. Geliştirici **Emre Güler** tarafından hazırlanan bu yenilikçi araç, WooCommerce mağazanızla tam uyumlu çalışır ve yasal yükümlülüklerinizi hızlıca yerine getirmenizi sağlar.
+This plugin allows you to easily add legal agreements and informational documents to WooCommerce-powered online stores. Developed by **Emre Güler**, this innovative tool integrates seamlessly with WooCommerce, ensuring that you meet your legal obligations quickly and effortlessly.
 
-## Neden Sözleşmeler Eklentisi?
+## Why Choose the Sözleşmeler Plugin?
 
-Sözleşmeler, iş süreçlerinizi kolaylaştırırken müşterilerinize güven verir. İşte başlıca avantajları:
+Legal documents make your business processes smoother and build trust with your customers. Here are the main benefits:
 
-- **Otomatik Sözleşme Oluşturma:** Mesafeli satış sözleşmesi ve ön bilgilendirme formu gibi yasal metinleri otomatik olarak ekleyin.
-- **Kolay Özelleştirme:** Sözleşme metinlerini işletmenizin ihtiyaçlarına uygun şekilde düzenleyin.
-- **Kullanıcı Dostu Arayüz:** Basit ve hızlı bir kurulum süreci sunar.
-- **Uyumluluk:** Eklenti, güncel WordPress ve WooCommerce sürümleri ile test edilmiştir.
+- **Automatic Document Creation:** Automatically generate documents like the Distance Sales Agreement and Pre-Information Form.
+- **Easy Customization:** Customize the legal documents to fit your business needs.
+- **User-Friendly Interface:** Quick and easy setup process.
+- **Full Compliance:** The plugin is tested and fully compatible with the latest WordPress and WooCommerce versions.
 
-## Öne Çıkan Özellikler
+## Key Features
 
-- **Tam WooCommerce Entegrasyonu:** Mevcut WooCommerce ayarlarınıza entegre olur.
-- **Güncel Teknoloji Desteği:** PHP 7.4 ve üzeri sürümlerle sorunsuz çalışır.
-- **Çok Dilli Kullanım:** `sozlesmeler` metin alanı ile farklı dillere kolayca çevrilebilir.
+- **Complete WooCommerce Integration:** Fully integrates with your existing WooCommerce setup.
+- **Support for Latest Technologies:** Compatible with PHP 7.4 and above.
+- **Multilingual Support:** Easily translate documents using the `sozlesmeler` text field.
 
-## Kimler Bu Eklentiyi Kullanmalı?
+## Who Should Use This Plugin?
 
-E-ticaret faaliyetlerini yasal mevzuata uygun hale getirmek isteyen herkes bu eklentiden faydalanabilir. Özellikle Türkiye gibi belirli yasal düzenlemelere tabi olan pazarlarda, bu eklenti olmazsa olmaz bir araçtır.
+Anyone who wants to ensure their e-commerce business complies with legal regulations will benefit from this plugin. This tool is especially essential for stores operating in countries with strict legal requirements, such as Turkey.
 
-## Kurulum ve Destek
+## Installation and Support
 
-1. **Eklentiyi İndirin:** WordPress yönetim panelinizden eklentiyi indirip yükleyin.
-2. **Eklentiyi Aktifleştirin:** WordPress yönetim panelinizden Eklentiler sayfasından eklentiyi aktif hale getirin.
-3. **Metinleri Özelleştirin:** Sözleşme ve formlarınızı özelleştirerek müşterilerinize sunun.
+1. **Download the Plugin:** Install the plugin from the WordPress plugin repository or by uploading the plugin files to your server.
+2. **Activate the Plugin:** Activate the plugin via the WordPress Admin Panel under the Plugins section.
+3. **Customize Documents:** Use the WordPress Admin Panel to customize the agreements and forms for your store.
 
 ---
 
-**E-ticaretinizde yasal uyumluluğu garanti altına alın! Sözleşmeler Eklentisi ile profesyonel bir adım atın. Şimdi indirip kullanmaya başlayın.**
+**Ensure legal compliance in your e-commerce store! Get started with the Sözleşmeler Plugin today!**
 
-Eklenti sayesinde mesafeli satış sözleşmesi, ön bilgilendirme formu vb. sözleşme ve yasal metinler WooCommerce ödeme sayfasında kişiye özel olarak doldurulmuş şekilde gösterilebilir.
-Sözleşmeleri kabul etmek müşterilere zorunlu tutulmuştur.
-Sözleşmeler alışverişten sonra gönderilen standart WooCommerce sipariş maillerine eklenmektedir.
+This plugin allows you to add documents like Distance Sales Agreements and Pre-Information Forms automatically to the WooCommerce checkout page, populated with user-specific details.
+Agreement acceptance is mandatory for customers during checkout.
+Legal documents are included in the WooCommerce order confirmation emails.
 
 == Installation ==
 
-Bu bölüm eklentiyi nasıl kuracağınızı ve aktif hâle getireceğinizi anlatır.
+This section explains how to install and activate the plugin.
 
-1. Eklenti dosyalarını 'wp-content/plugins' dizinine yükleyin veya eklentiyi doğrudan WordPress eklentileri ekranından yükleyin.
-2. Eklentiyi WordPress'teki 'Eklentiler' ekranından etkinleştirin.
-3. Eklentiyi yapılandırmak için WordPress yönetim panelindeki WooCommerce -> Sözleşmeler ekranını kullanın
+1. Upload the plugin files to the 'wp-content/plugins' directory or directly install it via the WordPress admin panel.
+2. Activate the plugin from the 'Plugins' screen in WordPress.
+3. Use the 'WooCommerce -> Sözleşmeler' screen in the WordPress admin panel to configure the plugin.
 
 == Frequently Asked Questions ==
-**Destek için:** [mailto:iletisim@eguler.net](mailto:iletisim@eguler.net)
+**For support, contact:** [mailto:iletisim@eguler.net](mailto:iletisim@eguler.net)
 
 == Screenshots ==
 
 == Changelog ==
+
+= 2.7.0 =
+* **Added:** TCKN requirement option is unlocked
+
 = 2.6.1 =
-* WP 6.8 & WC 9.4.1 uyumluluk
-* Ayarlar sayfasında değişiklikler yapıldı
+* **Fixed:** WP 6.8 & WC 9.4.1 compatibility ensured
+* **Fixed:** Minor adjustments on settings page
 
 = 2.6.0 =
-* Performans ve güvenlik iyileştirmeleri yapıldı
-* Ayarlar sayfasında değişiklikler yapıldı
+* **Fixed:** Performance and security improvements
+* **Changed:** Updated settings page layout
 
 = 2.5.0 =
-* Yükseltme bağlantısı güncellendi
+* **Added:** Update link for the latest version
 
 = 2.4.0 =
-* WP 6.5 & WC 8.7.0 uyumluluk
-* WP Plugin Dependency
-* Eklenti ikonu güncellendi
+* **Fixed:** WP 6.5 & WC 8.7.0 compatibility ensured
+* **Added:** WP Plugin Dependency added
+* **Changed:** Plugin icon updated
 
 = 2.3.0 =
-* WP 6.4 & WC 8.2.1 uyumluluk
+* **Fixed:** WP 6.4 & WC 8.2.1 compatibility ensured
 
 = 2.2.0 =
-* WP & WC son sürüm uyumluluk
-* WC HPOS uyumluluk
+* **Fixed:** Latest WP & WC version compatibility
+* **Fixed:** WooCommerce HPOS compatibility
 
 = 2.1.6 =
-* WP & WC son sürüm uyumluluk
+* **Fixed:** Latest WP & WC version compatibility
 
 = 2.1.5 =
-* WP & WC son sürüm uyumluluk
+* **Fixed:** Latest WP & WC version compatibility
 
 = 2.1.4 =
-* WP 6.2.2 & WC 7.7.0 uyumluluk
-* WP Multisite uyumluluk
+* **Fixed:** WP 6.2.2 & WC 7.7.0 compatibility ensured
+* **Added:** WP Multisite support
 
 = 2.1.3 =
-* WP 6.2 uyumluluk
+* **Fixed:** WP 6.2 compatibility ensured
 
 = 2.1.2 =
-* Sözleşme onay uyarısı hata düzeltme
+* **Fixed:** Fixed issue with agreement confirmation alert
 
 = 2.1.1 =
-* Güvenlik iyileştirmeleri
+* **Security:** Security improvements
+* **Removed:** TCKN requirement removed
 
 = 2.1.0 =
-* Anlamsal Sürümleme (SemVer) değişiklikleri
-* Güvenlik iyileştirmeleri
-* TCKN zorunluluğunun kaldırılması
+* **Changed:** Semantic versioning (SemVer) changes
+* **Security:** Security improvements
+* **Removed:** TCKN requirement removed
 
 = 2.0 =
-* Sürüm ve uyumluluk güncellemeleri
+* **Fixed:** Version and compatibility updates
 
 = 1.9 =
-* Uyumluluk güncellemeleri
-* Kış kampanyası
+* **Changed:** Compatibility updates
+* **Added:** Winter campaign launched
 
 = 1.8 =
-* Uyumluluk güncellemeleri
-* Kampanya
+* **Changed:** Compatibility updates
+* **Added:** Campaign launched
 
 = 1.7 =
-* TCKN alanına girilen verinin kontrolünde iyileştirilmeler yapıldı.
-Teşekkürler: Yiğit Budak
+* **Fixed:** Improvements in validating the TCKN field
+Thanks: Yiğit Budak
 
 = 1.6 =
-* Kampanya sona erdi
+* **Added:** Winter campaign ended
 
 = 1.5 =
-* WooCommerce 4.0.1 uyumluluk
-* Büyük fırsat!
+* **Fixed:** WooCommerce 4.0.1 compatibility added
+* **Added:** Big offer!
 
 = 1.4 =
-* Önemli hata düzeltmeleri yapıldı!
+* **Fixed:** Major bug fixes
 
 = 1.3 =
-* Yazılımsal iyileştirmeler yapıldı.
-* Eklentiler sayfasına ek linkler eklendi.
+* **Changed:** Software improvements
+* **Added:** Additional links added to the Plugins page
 
 = 1.2 =
-* Eklenti banner ve ikonlarının eklendi
+* **Changed:** Plugin improvements
 
 = 1.1 =
-* Hata Düzeltme
+* **Fixed:** Minor bug fixes
 
 = 1.0 =
-* İlk sürüm
+* **Added:** Initial release
 
 == Upgrade Notice ==
+
+= 2.6.1 =
+* **Fixed:** WP 6.8 & WC 9.4.1 compatibility
+* **Fixed:** Minor changes to the settings page
+
+= 2.6.0 =
+* **Fixed:** Performance and security updates
+* **Changed:** Updated settings page layout
+
+= 2.5.0 =
+* **Added:** Update link for the latest version
+
+= 2.4.0 =
+* **Fixed:** WP 6.5 & WC 8.7.0 compatibility
+* **Added:** WP Plugin Dependency
+* **Changed:** Updated plugin icon
+
+= 2.3.0 =
+* **Fixed:** WP 6.4 & WC 8.2.1 compatibility
+
+= 2.2.0 =
+* **Fixed:** WooCommerce HPOS support added
+* **Fixed:** Latest WP & WC version compatibility
+
+= 2.1.6 =
+* **Fixed:** Latest WP & WC version compatibility
+
+= 2.1.5 =
+* **Fixed:** Latest WP & WC version compatibility
+
+= 2.1.4 =
+* **Fixed:** WP 6.2.2 & WC 7.7.0 compatibility
+* **Added:** WP Multisite support
+
+= 2.1.3 =
+* **Fixed:** WP 6.2 compatibility
+
+= 2.1.2 =
+* **Fixed:** Fixed agreement confirmation alert issue
+
 = 2.1.1 =
-* Güvenlik iyileştirmeleri yapıldı.
-* TCKN zorunluluğu kaldırıldı.
+* **Security:** Security improvements
+* **Removed:** TCKN requirement removed
+
+= 2.1.0 =
+* **Changed:** Semantic versioning updates (SemVer)
+* **Security:** Security improvements
+* **Removed:** TCKN requirement removed
+
+= 1.9 =
+* **Changed:** Compatibility updates
+* **Added:** Winter campaign launched
+
+= 1.8 =
+* **Changed:** Compatibility updates
+* **Added:** Campaign launched
 
 = 1.7 =
-* TCKN alanına girilen verinin kontrolünde iyileştirilmeler yapıldı.
-Teşekkürler: Yiğit Budak
+* **Fixed:** Improved TCKN field validation
+Thanks: Yiğit Budak
 
 = 1.6 =
-* Kampanya sona erdi
+* **Added:** Winter campaign concluded
 
 = 1.5 =
-* WooCommerce 4.0.1 uyumluluk
-* Büyük fırsat!
+* **Fixed:** WooCommerce 4.0.1 compatibility added
+* **Added:** Big offer!
 
 = 1.4 =
-* Önemli hata düzeltmeleri yapıldı!
+* **Fixed:** Major bug fixes
 
 = 1.3 =
-* Yazılımsal iyileştirmeler yapıldı.
-* Eklentiler sayfasına ek linkler eklendi.
+* **Changed:** Software improvements
+* **Added:** New links added to the Plugins page
 
 = 1.2 =
-* Eklentimizde bazı iyileştirmeler yaptık!
+* **Changed:** Plugin visual improvements
+
+= 1.1 =
+* **Fixed:** Minor bug fixes
+
+= 1.0 =
+* **Added:** Initial release

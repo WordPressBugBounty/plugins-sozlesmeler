@@ -11,7 +11,7 @@
  * Plugin Name:       Sözleşmeler
  * Plugin URI:        https://eguler.net/woocommerce-sozlesmeler-eklentisi/
  * Description:       Woocommerce sitenize mesafeli satış sözleşmesi ve ön bilgilendirme formu gibi yasal metinleri ekleyebileceğiniz sözleşmeler eklentisi
- * Version:           2.6.1
+ * Version:           2.7.0
  * Requires at least: 5.0
  * Requires PHP:      7.4
  * Requires Plugins:	woocommerce
@@ -23,7 +23,7 @@
  * License URI:       http://www.gnu.org/licenses/gpl-3.0.html
  *
  *
- * WC tested up to: 9.4.1
+ * WC tested up to: 9.5.2
  *
  */
 
@@ -33,7 +33,7 @@ if (!defined('ABSPATH')) {
 
 define('WCTR_PATH', plugin_dir_path(__FILE__));
 define('WCTR_URL', plugin_dir_url(__FILE__));
-define('WCTR_VER', '2.6.1');
+define('WCTR_VER', '2.7.0');
 
 function woocontracts_activated()
 {
@@ -47,6 +47,7 @@ function woocontracts_activated()
 	add_option('woocontracts_1_yaz', 'Birinci sözleşmenin içeriği...');
 	add_option('woocontracts_2_yaz', 'İkinci sözleşmenin içeriği...');
 	add_option('woocontracts_3_yaz', 'Üçüncü sözleşmenin içeriği...');
+	add_option('woocontracts_TCR', '1');
 }
 register_activation_hook(__FILE__, 'woocontracts_activated');
 
@@ -62,6 +63,7 @@ function woocontracts_uninstalled()
 	delete_option('woocontracts_1_yaz');
 	delete_option('woocontracts_2_yaz');
 	delete_option('woocontracts_3_yaz');
+	delete_option('woocontracts_TCR');
 }
 register_uninstall_hook(__FILE__, 'woocontracts_uninstalled');
 
@@ -212,10 +214,11 @@ if ($is_wc_active) {
 
 	function woocontracts_checkout_fields($fields)
 	{
+		$required = get_option("woocontracts_TCR") == '1' ? true : false;
 		$fields['billing']['billing_tc'] = array(
 			'label' => __('TC Kimlik No', 'sozlesmeler'),
 			'priority' => 33,
-			'required' => false,
+			'required' => $required,
 			'class' => array('form-row form-row-wide'),
 			'clear' => true,
 		);
@@ -306,7 +309,7 @@ if ($is_wc_active) {
 		} else {
 			$tcno = '';
 		}
-		if (!woocontracts_isTcKimlik($tcno) && !empty($tcno)) {
+		if (!woocontracts_isTcKimlik($tcno) && !empty($tcno) && get_option("woocontracts_TCR") == "1") {
 			wc_add_notice(wp_kses_post(__('Lütfen Geçerli Bir TC Kimlik No Girin.', 'sozlesmeler')), 'error');
 		}
 		$woocontractsbaslik = (!empty(get_option("woocontracts_baslik")) ? get_option("woocontracts_baslik") : "Sözleşmeler");
@@ -482,52 +485,62 @@ if ($is_wc_active) {
 	function woocontracts_admin_panel()
 	{
 		$tab = isset($_GET['tab']) ? $_GET['tab'] : null;
+		if (get_option("woocontracts_TCR") === false) {
+			add_option('woocontracts_TCR', '1');
+		}
 		if (isset($_POST["action"]) && $_POST["action"] == "guncelle") {
-			if (!isset($_POST['woocontracts_update']) || !wp_verify_nonce($_POST['woocontracts_update'], 'woocontracts_update')) {
+			if (!isset($_POST['woocontracts_update'])) {
 				print 'Üzgünüz, bu sayfaya erişim yetkiniz yok!';
 				exit;
-			} else {
-				$allowed_tags = woocontracts_expanded_allowed_tags();
-				if (isset($_POST['woocontracts_update']) && wp_verify_nonce($_POST['woocontracts_update'], 'woocontracts_update')) {
-					if (isset($_POST['woocontractsbaslik'])) {
-						$woocontractsbaslik = wp_filter_post_kses($_POST['woocontractsbaslik']);
-						update_option('woocontracts_baslik', $woocontractsbaslik);
-					}
-					if (isset($_POST['woocontracts1baslik'])) {
-						$woocontracts1baslik = wp_filter_post_kses($_POST['woocontracts1baslik']);
-						update_option('woocontracts_1_baslik', $woocontracts1baslik);
-					}
-					if (isset($_POST['woocontracts2baslik'])) {
-						$woocontracts2baslik = wp_filter_post_kses($_POST['woocontracts2baslik']);
-						update_option('woocontracts_2_baslik', $woocontracts2baslik);
-					}
-					if (isset($_POST['woocontracts3baslik'])) {
-						$woocontracts3baslik = wp_filter_post_kses($_POST['woocontracts3baslik']);
-						update_option('woocontracts_3_baslik', $woocontracts3baslik);
-					}
-					if (isset($_POST['woocontracts1yaz'])) {
-						$woocontracts1yaz = wp_filter_post_kses($_POST['woocontracts1yaz']);
-						update_option('woocontracts_1_yaz', $woocontracts1yaz);
-					}
-					if (isset($_POST['woocontracts2yaz'])) {
-						$woocontracts2yaz = wp_filter_post_kses($_POST['woocontracts2yaz']);
-						update_option('woocontracts_2_yaz', $woocontracts2yaz);
-					}
-					if (isset($_POST['woocontracts3yaz'])) {
-						$woocontracts3yaz = wp_filter_post_kses($_POST['woocontracts3yaz']);
-						update_option('woocontracts_3_yaz', $woocontracts3yaz);
-					}
-					$woocontracts1a = ((isset($_POST['woocontracts1a'])) ? '1' : '0');
-					update_option('woocontracts_1a', $woocontracts1a);
-					$woocontracts2a = ((isset($_POST['woocontracts2a'])) ? '1' : '0');
-					update_option('woocontracts_2a', $woocontracts2a);
-					$woocontracts3a = ((isset($_POST['woocontracts3a'])) ? '1' : '0');
-					update_option('woocontracts_3a', $woocontracts3a);
+			} elseif (isset($_POST['woocontracts_update']) && wp_verify_nonce($_POST['woocontracts_update'], 'woocontracts_update')) {
+				if (isset($_POST['woocontractsbaslik'])) {
+					$woocontractsbaslik = wp_filter_post_kses($_POST['woocontractsbaslik']);
+					update_option('woocontracts_baslik', $woocontractsbaslik);
 				}
+				if (isset($_POST['woocontracts1baslik'])) {
+					$woocontracts1baslik = wp_filter_post_kses($_POST['woocontracts1baslik']);
+					update_option('woocontracts_1_baslik', $woocontracts1baslik);
+				}
+				if (isset($_POST['woocontracts2baslik'])) {
+					$woocontracts2baslik = wp_filter_post_kses($_POST['woocontracts2baslik']);
+					update_option('woocontracts_2_baslik', $woocontracts2baslik);
+				}
+				if (isset($_POST['woocontracts3baslik'])) {
+					$woocontracts3baslik = wp_filter_post_kses($_POST['woocontracts3baslik']);
+					update_option('woocontracts_3_baslik', $woocontracts3baslik);
+				}
+				if (isset($_POST['woocontracts1yaz'])) {
+					$woocontracts1yaz = wp_filter_post_kses($_POST['woocontracts1yaz']);
+					update_option('woocontracts_1_yaz', $woocontracts1yaz);
+				}
+				if (isset($_POST['woocontracts2yaz'])) {
+					$woocontracts2yaz = wp_filter_post_kses($_POST['woocontracts2yaz']);
+					update_option('woocontracts_2_yaz', $woocontracts2yaz);
+				}
+				if (isset($_POST['woocontracts3yaz'])) {
+					$woocontracts3yaz = wp_filter_post_kses($_POST['woocontracts3yaz']);
+					update_option('woocontracts_3_yaz', $woocontracts3yaz);
+				}
+				$woocontracts1a = ((isset($_POST['woocontracts1a'])) ? '1' : '0');
+				update_option('woocontracts_1a', $woocontracts1a);
+				$woocontracts2a = ((isset($_POST['woocontracts2a'])) ? '1' : '0');
+				update_option('woocontracts_2a', $woocontracts2a);
+				$woocontracts3a = ((isset($_POST['woocontracts3a'])) ? '1' : '0');
+				update_option('woocontracts_3a', $woocontracts3a);
 
 				echo '<div class="updated"><p><strong>' . esc_html__('Ayarlar kaydedildi', 'sozlesmeler') . '</strong></p></div>';
 			}
-		} ?>
+		}elseif(isset($_POST["action"]) && $_POST["action"] == "zorunlulukGuncelle") {
+			if (!isset($_POST['woocontracts_update'])) {
+				print 'Üzgünüz, bu sayfaya erişim yetkiniz yok!';
+				exit;
+			} elseif (isset($_POST['woocontracts_update']) && wp_verify_nonce($_POST['woocontracts_update'], 'woocontracts_update')) {
+				$wctrTCR = ((isset($_POST['wctrTCR'])) ? '1' : '0');
+				update_option('woocontracts_TCR', $wctrTCR);
+				echo '<div class="updated"><p><strong>' . esc_html__('Ayarlar kaydedildi', 'sozlesmeler') . '</strong></p></div>';
+			}
+		}
+		?>
 
 		<div class="wrap">
 			<h1 class="wp-heading-inline"><?php esc_html_e('WooCommerce Sözleşmeleri', 'sozlesmeler'); ?></h1>
@@ -710,8 +723,8 @@ if ($is_wc_active) {
 									<td><label for="wctrTCE"><input type="checkbox" id="wctrTCE" name="wctrTCE" value="" checked disabled>&nbsp;Ödeme formuna TC Kimlik Numarası alanını ekle</label></td>
 								</tr>
 								<tr valign="top">
-									<th scope="row"><label class="pro" for="wctrTCR">TCKN Zorunluluğu</label></th>
-									<td><label for="wctrTCR"><input type="checkbox" id="wctrTCR" name="wctrTCR" value="" disabled>&nbsp;TC Kimlik Numarası alanının doldurulması zorunlu olsun</label></td>
+									<th scope="row"><label for="wctrTCR">TCKN Zorunluluğu</label></th>
+									<td><label for="wctrTCR"><input type="checkbox" id="wctrTCR" name="wctrTCR" value="1" <?php checked("1" == get_option("woocontracts_TCR")); ?>>&nbsp;TC Kimlik Numarası alanının doldurulması zorunlu olsun</label></td>
 								</tr>
 								<tr valign="top">
 									<th scope="row"><label class="pro" for="wctrTCPos">TCKN Konumu</label></th>
@@ -744,6 +757,8 @@ if ($is_wc_active) {
 									</td>
 								</tr>
 							</table>
+							<?php wp_nonce_field('woocontracts_update', 'woocontracts_update'); ?>
+							<input type="hidden" name="action" value="zorunlulukGuncelle">
 					<?php break;
 					endswitch; ?>
 					<p class="submit"><input type="submit" value="Değişiklikleri Kaydet" class="button button-primary"></p>
